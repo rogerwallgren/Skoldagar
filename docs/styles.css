@@ -1,0 +1,153 @@
+:root {
+    color-scheme: light dark;
+    --background: #f5f8ff;
+    --card: rgba(255, 255, 255, 0.82);
+    --text: #172033;
+    --secondary: #596579;
+    --accent: #2878d8;
+    --border: rgba(36, 91, 155, 0.14);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #101521;
+        --card: rgba(27, 35, 51, 0.9);
+        --text: #f2f5fa;
+        --secondary: #b1bbca;
+        --accent: #73b5ff;
+        --border: rgba(153, 194, 242, 0.18);
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--text);
+    background:
+        radial-gradient(circle at top left, rgba(75, 151, 246, 0.18), transparent 42%),
+        radial-gradient(circle at bottom right, rgba(255, 174, 75, 0.18), transparent 38%),
+        var(--background);
+    line-height: 1.6;
+}
+
+main,
+nav,
+footer {
+    width: min(760px, calc(100% - 40px));
+    margin-inline: auto;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 24px;
+}
+
+nav a,
+footer a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.brand {
+    color: var(--text);
+    font-weight: 750;
+}
+
+.links {
+    display: flex;
+    gap: 18px;
+}
+
+.hero {
+    padding: 72px 0 48px;
+    text-align: center;
+}
+
+.icon {
+    display: grid;
+    width: 88px;
+    height: 88px;
+    margin: 0 auto 24px;
+    place-items: center;
+    border-radius: 22px;
+    background: linear-gradient(145deg, #397be5, #46b8e8);
+    box-shadow: 0 18px 42px rgba(32, 104, 196, 0.28);
+    color: white;
+    font-size: 46px;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(2.5rem, 8vw, 4.2rem);
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 1.35rem;
+}
+
+.lead {
+    max-width: 580px;
+    margin: 20px auto 0;
+    color: var(--secondary);
+    font-size: 1.15rem;
+}
+
+.card {
+    margin-bottom: 20px;
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    background: var(--card);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 16px 48px rgba(22, 48, 83, 0.08);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.features .card {
+    margin: 0;
+}
+
+ul {
+    padding-left: 1.25rem;
+}
+
+a {
+    color: var(--accent);
+}
+
+footer {
+    padding-block: 42px;
+    color: var(--secondary);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .links {
+        gap: 12px;
+        font-size: 0.9rem;
+    }
+
+    .hero {
+        padding-top: 42px;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+}
